@@ -28,6 +28,7 @@ void print_reverse(Node* head,Node* tail){
         i=i->next;
         j=j->prev;
     }
+    swap(i->val,j->val);
 }
 int main(){
     Node* head = new Node(10);
@@ -42,13 +43,11 @@ int main(){
     b->prev=a;
     b->next=c;
     c->prev=b;
-    c->next=d;
-    d->prev=c;
-    d->next=NULL;
+    c->next=NULL;
 
     print_normal(head);
     cout<<endl;
-    print_reverse(head,d);
+    print_reverse(head,c);
     print_normal(head);
 
     return 0;
